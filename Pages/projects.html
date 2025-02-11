@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Projects</title>
+    <link rel="icon" type="image/x-icon" href="../images/ourfavicon.png">
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <style>
+    .container {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    /* Intro Section */
+    .intro-section {
+      text-align: center;
+      margin-bottom: 40px;
+      width: 100%;
+      padding: 50px;
+      background: linear-gradient(to right, #1f1471, #06014b);
+    }
+
+    .intro-section h1 {
+      font-size: 2.4rem;
+      color: #00bcd4;
+      margin-bottom: 10px;
+    }
+
+    .intro-section p {
+      font-size: 1.1rem;
+      color: #ffffff;
+    }
+
+    /* Projects Section */
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #00bcd4;
+    }
+
+    .projects-container {
+      margin: 0 auto;
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 50px 0;
+    }
+
+    .project-box {
+      position: relative;
+      border-radius: 15px;
+      height: 300px;
+      flex: 1;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .project-box h3 {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+      background-color: #00bfff;
+      width: 100%;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.3rem;
+      border-top-right-radius: 15px;
+      border-top-left-radius: 15px;
+      color: white;
+    }
+
+    .project-img-container {
+      position: relative;
+      height: calc(100% - 53px);
+      overflow: hidden;
+    }
+
+    .prj-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-bottom-right-radius: 15px;
+      border-bottom-left-radius: 15px;
+      transition: transform 0.5s ease;
+    }
+
+    .project-overlay {
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0.6)
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: bottom 0.4s ease;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .project-box:hover .project-overlay {
+      bottom: 0;
+    }
+
+    .project-box:hover .prj-img {
+      transform: scale(1.1);
+    }
+
+    .live-preview-btn {
+      background: #00bcd4;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.3s ease 0.2s;
+    }
+
+    .live-preview-btn:hover {
+      background: #0097a7;
+      transform: translateY(0) scale(1.05);
+    }
+
+    .project-description {
+      color: white;
+      margin-bottom: 20px;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.3s ease 0.1s;
+    }
+
+    .project-tech {
+      color: #00bcd4;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .project-box:hover .project-description,
+    .project-box:hover .project-tech,
+    .project-box:hover .live-preview-btn {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+
+    @media screen and (max-width: 1200px) {
+  .container {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+
+
+  .projects-container {
+    flex-direction: column;
+  }
+  
+  .project-box {
+    width: 100%;
+    height: 300px;
+  }
+
+  /* Explicitly set the image container height */
+  .project-img-container {
+    height: 247px; /* This is exactly 300px - 53px (header height) */
+    width: 100%;
+  }
+
+  /* Ensure the image itself maintains aspect ratio */
+  .prj-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .intro-section {
+    padding: 30px 20px;
+  }
+
+  .intro-section h1 {
+    font-size: 2rem;
+  }
+
+  .contact-overlay h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .intro-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .intro-section p {
+    font-size: 1rem;
+  }
+
+  .project-box h3 {
+    font-size: 1.1rem;
+    padding: 10px;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  .live-preview-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+  </style>
+
+  <body>
+    <nav class="navbar">
+      <div class="sub-navbar">
+        <div class="logo-container">
+          <a href="../index.html"
+            ><img src="../images/logo.png" class="logo" alt="logo"
+          /></a>
+        </div>
+        <div class="hamburger">
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+        </div>
+        <div class="menu-container">
+          <div class="menu">
+            <a href="../index.html">HOME</a>
+            <a href="../Pages/about.html">ABOUT</a>
+            <a href="../index.html#services">SERVICES</a>
+            <a href="../index.html#whyus">WHY US</a>
+            <a href="">PROJECTS</a>
+          </div>
+        </div>
+        <div class="cnt-btn-container">
+          <a href="./contact.html" class="contact-btn">CONTACT US</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Introduction Section -->
+    <div class="intro-section">
+      <h1>OUR PROJECTS</h1>
+      <p>
+        Take a look at our projects, thoughtfully designed and developed to
+        provide effective solutions and meet your goals.
+      </p>
+    </div>
+
+    <!-- Projects Section -->
+    <h2>Web Development</h2>
+
+    <div class="projects-container">
+      <div class="project-box">
+        <h3>ARIA Geme</h3>
+        <div class="project-img-container">
+          <img
+            src="../images/web1.png"
+            class="prj-img"
+            alt="project-img"
+          />
+          <div class="project-overlay">
+            <span class="project-tech">HTML • CSS • JavaScript • React</span>
+            <p class="project-description">
+              A sleek, modern website for seamless browsing and top-tier
+              functionality, Aria Game delivers innovation and engagement.
+            </p>
+            <a href="https://ariagame.netlify.app/" target="_blank" class="live-preview-btn"
+              >Live Preview</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="project-box">
+        <h3>Yummy Cook</h3>
+        <div class="project-img-container">
+          <img
+            src="../images/web2.png"
+            class="prj-img"
+            alt="project-img"
+          />
+          <div class="project-overlay">
+            <span class="project-tech">HTML • CSS • JavaScript</span>
+            <p class="project-description">
+              A fully responsive food platform with modern design and seamless
+              user experience.
+            </p>
+            <a href="https://yummy-cook.netlify.app/" target="_blank" class="live-preview-btn"
+              >Live Preview</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="project-box">
+        <h3>ARIA DEV</h3>
+        <div class="project-img-container">
+          <img
+            src="../images/web3.png"
+            class="prj-img"
+            alt="project-img"
+          />
+          <div class="project-overlay">
+            <span class="project-tech"
+              >HTML • CSS • JavaScript • React • ThreeJS</span
+            >
+            <p class="project-description">
+              A fully responsive web with Dynamic 3D Elements that are Smoothly
+              integrated using Three.js for a futuristic and immersive
+              experience.
+            </p>
+            <a href="https://aria-dev.netlify.app/" target="_blank" class="live-preview-btn"
+              >Live Preview</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Section -->
+    <h2>UI/UX</h2>
+
+    <div class="projects-container">
+      <div class="project-box">
+        <h3>Traveling Site</h3>
+        <div class="project-img-container">
+          <img
+            src="../images/uiux1.jpg"
+            class="prj-img"
+            alt="project-img"
+          />
+          <div class="project-overlay">
+            <span class="project-tech"
+              >A Traveling site design using UI/UX tools.</span
+            >
+            <p class="project-description">
+              A clean, user-centered design enhancing usability.
+            </p>
+            <a href="../projects files/uiux1.html" target="_blank" class="live-preview-btn"
+              >Live Preview</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="project-box">
+        <h3>Book Store Site</h3>
+        <div class="project-img-container">
+          <img
+            src="../images/uiux2.jpg"
+            class="prj-img"
+            alt="project-img"
+          />
+          <div class="project-overlay">
+            <span class="project-tech"
+              >A Book Store site design using UI/UX tools.</span
+            >
+            <p class="project-description">
+              A modern, responsive interface with smooth navigation.
+            </p>
+            <a href="../projects files/uiux2.html" target="_blank" class="live-preview-btn"
+              >Live Preview</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="project-box">
+        <h3>Plants Store Site</h3>
+        <div class="project-img-container">
+          <img
+            src="../images/uiux3.jpg"
+            class="prj-img"
+            alt="project-img"
+          />
+          <div class="project-overlay">
+            <span class="project-tech"
+              >A Plants Store site design using UI/UX tools.</span
+            >
+            <p class="project-description">
+              A sleek, intuitive design focused on user experience.
+            </p>
+            <a href="../projects files/uiux3.html" target="_blank" class="live-preview-btn"
+              >Live Preview</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Section -->
+    <h2>GRAPHIC DESIGNING</h2>
+    <div class="projects-container">
+      <div class="project-box">
+        <h3>LOGO DESIGNS</h3>
+        <div class="project-img-container">
+          <img
+            src="../images/logos designs.jpg"
+            class="prj-img"
+            alt="project-img"
+          />
+          <div class="project-overlay">
+            <span class="project-tech"> Some of our logo designs</span>
+            <p class="project-description">
+              Custom, professional logos designed to capture your brand’s
+              essence and leave a lasting impression.
+            </p>
+            <a href="../projects files/logos.html" target="_blank" class="live-preview-btn"
+              >Live Preview</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="project-box">
+        <h3>Business Card Design</h3>
+        <div class="project-img-container">
+          <img
+            src="../images/business card.jpg"
+            class="prj-img"
+            alt="project-img"
+          />
+          <div class="project-overlay">
+            <span class="project-tech">Business Card Design</span>
+            <p class="project-description">
+              Sleek and memorable business card that reflect your professional
+              identity and make a strong first impression
+            </p>
+            <a href="../projects files/card.html" target="_blank" class="live-preview-btn"
+              >Live Preview</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="project-box">
+        <h3>Social Media Posts</h3>
+        <div class="project-img-container">
+          <img
+            src="../images/social media posts.jpg"
+            class="prj-img"
+            alt="project-img"
+          />
+          <div class="project-overlay">
+            <span class="project-tech"
+              >Some of our social media post designs</span
+            >
+            <p class="project-description">
+              Creative and engaging social media posts that drive attention and
+              elevate your brand’s online presence.
+            </p>
+            <a href="../projects files/posts.html" target="_blank" class="live-preview-btn"
+              >Live Preview</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Section -->
+    <h2>WordPress</h2>
+
+    <div class="projects-container">
+      <div class="project-box">
+        <h3>Mize Website</h3>
+        <div class="project-img-container">
+          <img
+            src="../images/wp1.png"
+            class="prj-img"
+            alt="project-img"
+          />
+          <div class="project-overlay">
+            <span class="project-tech">Created using WordPress</span>
+            <p class="project-description">
+              A custom WordPress site with a responsive and user-friendly
+              design.
+            </p>
+            <a href="../projects files/wp1.html" target="_blank" class="live-preview-btn"
+              >Live Preview</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="project-box">
+        <h3>Chiro Slumber Website</h3>
+        <div class="project-img-container">
+          <img
+            src="../images/wp2.png"
+            class="prj-img"
+            alt="project-img"
+          />
+          <div class="project-overlay">
+            <span class="project-tech">Created using WordPress</span>
+            <p class="project-description">
+              A fast WordPress website with smooth navigation and effective
+              design.
+            </p>
+            <a href="../projects files/wp2.html" target="_blank" class="live-preview-btn"
+              >Live Preview</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="project-box">
+        <h3>Duradry</h3>
+        <div class="project-img-container">
+          <img
+            src="../images/wp3.png"
+            class="prj-img"
+            alt="project-img"
+          />
+          <div class="project-overlay">
+            <span class="project-tech">Created using WordPress</span>
+            <p class="project-description">
+              A Simple WordPress site woth fast and simple design.
+            </p>
+            <a href="../projects files/wp3.html" target="_blank" class="live-preview-btn"
+              >Live Preview</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Section -->
+    <h2>Shopify</h2>
+
+    <div class="projects-container">
+      <div class="project-box">
+        <h3>WV Store</h3>
+        <div class="project-img-container">
+          <img
+            src="../images/shopify1.png"
+            class="prj-img"
+            alt="project-img"
+          />
+          <div class="project-overlay">
+            <span class="project-tech">Shopify Store</span>
+            <p class="project-description">
+              A sleek, conversion-focused Shopify store with a seamless user
+              experience.
+            </p>
+            <a href="../projects files/shopify1.html" target="_blank" class="live-preview-btn"
+              >Live Preview</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="project-box">
+        <h3>Fusion Organics Store</h3>
+        <div class="project-img-container">
+          <img
+            src="../images/shopify2.png"
+            class="prj-img"
+            alt="project-img"
+          />
+          <div class="project-overlay">
+            <span class="project-tech">Shopify Store</span>
+            <p class="project-description">
+              A custom Shopify website designed with modern design and seamless
+              user experience.
+            </p>
+            <a href="../projects files/shopify2.html" target="_blank" class="live-preview-btn"
+              >Live Preview</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="project-box">
+        <h3>Silver Mirror Store</h3>
+        <div class="project-img-container">
+          <img
+            src="../images/shopify3.png"
+            class="prj-img"
+            alt="project-img"
+          />
+          <div class="project-overlay">
+            <span class="project-tech">Shopify Store</span>
+            <p class="project-description">
+              A responsive and optimized Shopify store with modern and effective
+              design.
+            </p>
+            <a href="../projects files/shopify3.html" target="_blank" class="live-preview-btn"
+              >Live Preview</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="brand-section">
+          <a href="../index.html"
+            ><img src="../images/logo.png" class="logo" alt="logo"
+          /></a>
+          <p class="brand-description">
+            A passionate team of digital artisans helps clients navigate the
+            digital landscape.
+          </p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61572506979003"><i class="fab fa-facebook-f"></i></a>
+            <!-- <a href="https://x.com/thetechtition"><i class="fa-brands fa-x-twitter"></i></a> -->
+            <a href="https://www.instagram.com/techtition/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.threads.net/@techtition?xmt=AQGzmy6eU3FmKwsH6-l-KRQFJIwNFDOrI7LiU-vWxfVZhds"><i class="fa-brands fa-threads"></i></a>
+            <a href="https://www.linkedin.com/company/thetechtition/"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-container">
+          <div class="section-heading">
+            <div class="heading-line"></div>
+            <h3>USEABLE LINKS</h3>
+          </div>
+          <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="../Pages/about.html">About</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#whyus">Why Us</a>
+            <a href="">Projects</a>
+            <a href="./contact.html">Contact Us</a>
+          </div>
+        </div>
+
+        <div class="footer-contact-info">
+          <div class="section-heading">
+            <div class="heading-line"></div>
+            <h3>CONTACT INFO</h3>
+          </div>
+          <div class="footer-contact-details">
+            <div class="footer-contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <p>Karachi, Pakistan</p>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <p>+92 312 2238398</p>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-envelope"></i>
+              <p>info.techtition@gmail.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="newsletter">
+          <div class="section-heading">
+            <div class="heading-line"></div>
+            <h3>NEWSLETTER</h3>
+          </div>
+          <form class="newsletter-form" id="formnewsletter">
+            <input
+            type="hidden"
+            name="access_key"
+            value="04e2a5bc-7152-4f4b-b74f-5011acc9d52a"
+          />
+
+            <input
+              name="newsletter"
+              type="email"
+              placeholder="Your email address..."
+              required
+            />
+            <button type="submit" class="nlbtn">SUBSCRIBE</button>
+          </form>
+          <p>Sign up for our newsletter to get latest updates.</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="copyright">
+          © 2025 Techtition. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="../app.js"></script>
+  </body>
+</html>

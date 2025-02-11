@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graphic Designing Services</title>
+    <link rel="icon" type="image/x-icon" href="../images/ourfavicon.png">
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <link rel="stylesheet" href="../style.css" />
+
+    <style>
+      .container {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      /* Intro Section */
+      .intro-section {
+        text-align: center;
+        margin-bottom: 40px;
+        width: 100%;
+        padding: 50px;
+        background: linear-gradient(to right, #1f1471, #06014b);
+      }
+
+      .intro-section h1 {
+        font-size: 2.4rem;
+        color: #00bcd4;
+        margin-bottom: 10px;
+      }
+
+      .intro-section p {
+        font-size: 1.1rem;
+        color: #ffffff;
+      }
+
+      /* Pricing Section */
+      .pricing-section {
+        margin-bottom: 40px;
+      }
+
+      .pricing-section h2 {
+        text-align: center;
+        font-size: 2rem;
+        color: #00bcd4;
+        margin-bottom: 20px;
+      }
+
+      .pricing-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .pricing-box h3 {
+        font-size: 1.5rem;
+        color: #00bfff;
+        margin-bottom: 10px;
+      }
+
+      .pricing-box p {
+        margin-bottom: 10px;
+        color: #fff;
+      }
+
+      .pricing-box .price {
+        font-size: 1.8rem;
+        color: #4689b6;
+        margin-bottom: 15px;
+      }
+
+      .pricing-box ul {
+        list-style: none;
+        padding: 0;
+        color: white;
+      }
+
+      .pricing-box ul li {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+      }
+
+      .pricing-box {
+        height: 300px;
+        background: linear-gradient(to right, #1f1471, #06014b);
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .pricing-box .pricing-content {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .pricing-box .contact-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #1f1471, #06014b);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: all 0.3s ease;
+        padding: 20px;
+      }
+
+      .pricing-box:hover .pricing-content {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      .pricing-box:hover .contact-overlay {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .contact-overlay h3 {
+        font-size: 1.8rem;
+        color: #00bfff;
+        margin-bottom: 15px;
+        transform: translateY(20px);
+        transition: transform 0.3s ease 0.1s;
+      }
+
+      .contact-overlay p {
+        color: #ffffff;
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        transform: translateY(20px);
+        transition: transform 0.3s ease 0.2s;
+      }
+
+      .contact-button {
+        background: #00bcd4;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transform: translateY(20px);
+        transition: all 0.3s ease 0.3s;
+      }
+
+      .contact-button:hover {
+        background: #0097a7;
+        transform: translateY(20px) scale(1.05);
+      }
+
+      .pricing-box:hover .contact-overlay h3,
+      .pricing-box:hover .contact-overlay p,
+      .pricing-box:hover .contact-overlay .contact-button {
+        transform: translateY(0);
+      }
+
+      .pricing-note {
+        background-color: #0097a7;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        color: white;
+      }
+
+      /* Projects Section */
+      h2 {
+        text-align: center;
+        font-size: 2rem;
+        color: #00bcd4;
+        margin-top: 40px;
+        margin-bottom: 20px;
+      }
+
+      .projects-container {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 50px;
+      }
+
+      .project-box {
+        position: relative;
+        border-radius: 15px;
+        height: 300px;
+        flex: 1;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .project-box h3 {
+        position: relative;
+        z-index: 2;
+        margin: 0;
+        background-color: #00bfff;
+        width: 100%;
+        padding: 15px;
+        text-align: center;
+        font-size: 1.3rem;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        color: white;
+      }
+
+      .project-img-container {
+        position: relative;
+        height: calc(100% - 53px);
+        overflow: hidden;
+      }
+
+      .prj-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        transition: transform 0.5s ease;
+      }
+
+      .project-overlay {
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.9),
+          rgba(0, 0, 0, 0.6)
+        );
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: bottom 0.4s ease;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .project-box:hover .project-overlay {
+        bottom: 0;
+      }
+
+      .project-box:hover .prj-img {
+        transform: scale(1.1);
+      }
+
+      .live-preview-btn {
+        background: #00bcd4;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 15px;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.3s ease 0.2s;
+      }
+
+      .live-preview-btn:hover {
+        background: #0097a7;
+        transform: translateY(0) scale(1.05);
+      }
+
+      .project-description {
+        color: white;
+        margin-bottom: 20px;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.3s ease 0.1s;
+      }
+
+      .project-tech {
+        color: #00bcd4;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .project-box:hover .project-description,
+      .project-box:hover .project-tech,
+      .project-box:hover .live-preview-btn {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      
+  /* Responsive Design */
+  @media screen and (max-width: 1200px) {
+  .container {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .pricing-container {
+    flex-direction: column;
+  }
+
+  .projects-container {
+    flex-direction: column;
+  }
+  
+  .project-box {
+    width: 100%;
+    height: 300px;
+  }
+
+  /* Explicitly set the image container height */
+  .project-img-container {
+    height: 247px; /* This is exactly 300px - 53px (header height) */
+    width: 100%;
+  }
+
+  /* Ensure the image itself maintains aspect ratio */
+  .prj-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .intro-section {
+    padding: 30px 20px;
+  }
+
+  .intro-section h1 {
+    font-size: 2rem;
+  }
+
+  .pricing-section h2,
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-overlay h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .intro-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .intro-section p {
+    font-size: 1rem;
+  }
+
+  .project-box h3 {
+    font-size: 1.1rem;
+    padding: 10px;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  .live-preview-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="sub-navbar">
+        <div class="logo-container">
+          <a href="../index.html"
+            ><img src="../images/logo.png" class="logo" alt="logo"
+          /></a>
+        </div>
+        <div class="hamburger">
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+        </div>
+        <div class="menu-container">
+          <div class="menu">
+            <a href="../index.html">HOME</a>
+            <a href="../Pages/about.html">ABOUT</a>
+            <a href="../index.html#services">SERVICES</a>
+            <a href="../index.html#whyus">WHY US</a>
+            <a href="./projects.html">PROJECTS</a>
+          </div>
+        </div>
+        <div class="cnt-btn-container">
+          <a href="./contact.html" class="contact-btn">CONTACT US</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Introduction Section -->
+    <div class="intro-section">
+      <h1>Graphic Designing Services</h1>
+      <p>
+        Our graphic design services bring your brand to life with creative and
+        impactful visuals. From logos to banners, we craft designs that
+        communicate your message effectively and leave a lasting impression.
+      </p>
+    </div>
+    <div class="container">
+      <!-- Pricing Section -->
+      <div class="pricing-section">
+        <h2>Pricing Plans</h2>
+        <div class="pricing-container">
+          <div class="pricing-box">
+            <!-- Original pricing content -->
+            <div class="pricing-content">
+              <h3>Basic Plan</h3>
+              <p>Starting package.</p>
+              <p class="price">$100 - $250</p>
+              <ul>
+                <li>Logo Design (2-3 Concepts)</li>
+                <li>3 Social Media Post Designs</li>
+                <li>Basic Business Card</li>
+              </ul>
+            </div>
+
+            <!-- Contact overlay -->
+            <div class="contact-overlay">
+              <h3>Let's Work Together!</h3>
+              <p>
+                Ready to bring your vision to life? Let's create something
+                amazing.
+              </p>
+              <a href="contact.html" class="contact-button">Contact Us Now</a>
+            </div>
+          </div>
+
+          <div class="pricing-box">
+            <!-- Original pricing content -->
+            <div class="pricing-content">
+              <h3>Standard Plan</h3>
+              <p>Perfect for growing businesses.</p>
+              <p class="price">$300 - $500</p>
+              <ul>
+                <li>Logo + Brand Kit (Color Palette, Fonts, Guidelines)</li>
+                <li>7 Social Media Posts/Banners</li>
+                <li>Flyer or Brochure Design</li>
+              </ul>
+            </div>
+
+            <!-- Contact overlay -->
+            <div class="contact-overlay">
+              <h3>Let's Work Together!</h3>
+              <p>
+                Ready to bring your vision to life? Let's create something
+                amazing.
+              </p>
+              <a href="contact.html" class="contact-button">Contact Us Now</a>
+            </div>
+          </div>
+
+          <div class="pricing-box">
+            <!-- Original pricing content -->
+            <div class="pricing-content">
+              <h3>Premium Plan</h3>
+              <p>Advanced solutions for your needs.</p>
+              <p class="price">$600 - $1000</p>
+              <ul>
+                <li>Complete Branding Package (Logo, Brand Identity)</li>
+                <li>12 Social Media Posts/Banners</li>
+                <li>Flyer,Broucher and more</li>
+              </ul>
+            </div>
+
+            <!-- Contact overlay -->
+            <div class="contact-overlay">
+              <h3>Let's Work Together!</h3>
+              <p>
+                Ready to bring your vision to life? Let's create something
+                amazing.
+              </p>
+              <a href="contact.html" class="contact-button">Contact Us Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="pricing-note">
+        Prices and features may vary based on project requirements and
+        customization. If you have specific needs or require something different
+        from our listed plans, we’re happy to create a tailored solution for
+        you. <a href="./contact.html">Contact us</a> for a detailed quote that
+        suits your unique requirements.
+      </p>
+
+      <!-- Projects Section -->
+      <h2>Our Projects</h2>
+
+      <div class="projects-container">
+        <div class="project-box">
+          <h3>LOGO DESIGNS</h3>
+          <div class="project-img-container">
+            <img
+              src="../images/logos designs.jpg"
+              class="prj-img"
+              alt="project-img"
+            />
+            <div class="project-overlay">
+              <span class="project-tech"> Some of our logo designs</span>
+              <p class="project-description">
+                Custom, professional logos designed to capture your brand’s
+                essence and leave a lasting impression.
+              </p>
+              <a href="../projects files/gd1.html" target="_blank" class="live-preview-btn"
+                >Live Preview</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="project-box">
+          <h3>Business Card Design</h3>
+          <div class="project-img-container">
+            <img
+              src="../images/business card.jpg"
+              class="prj-img"
+              alt="project-img"
+            />
+            <div class="project-overlay">
+              <span class="project-tech">Business Card Design</span>
+              <p class="project-description">
+                Sleek and memorable business card that reflect your professional
+                identity and make a strong first impression
+              </p>
+              <a href="../projects files/gd2.html" target="_blank" class="live-preview-btn"
+                >Live Preview</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="project-box">
+          <h3>Social Media Posts</h3>
+          <div class="project-img-container">
+            <img
+              src="../images/social media posts.jpg"
+              class="prj-img"
+              alt="project-img"
+            />
+            <div class="project-overlay">
+              <span class="project-tech"
+                >Some of our social media post designs</span
+              >
+              <p class="project-description">
+                Creative and engaging social media posts that drive attention
+                and elevate your brand’s online presence.
+              </p>
+              <a href="../projects files/gd3.html" target="_blank" class="live-preview-btn"
+                >Live Preview</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="brand-section">
+          <a href="../index.html"
+            ><img src="../images/logo.png" class="logo" alt="logo"
+          /></a>
+          <p class="brand-description">
+            A passionate team of digital artisans helps clients navigate the
+            digital landscape.
+          </p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61572506979003"><i class="fab fa-facebook-f"></i></a>
+            <!-- <a href="https://x.com/thetechtition"><i class="fa-brands fa-x-twitter"></i></a> -->
+            <a href="https://www.instagram.com/techtition/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.threads.net/@techtition?xmt=AQGzmy6eU3FmKwsH6-l-KRQFJIwNFDOrI7LiU-vWxfVZhds"><i class="fa-brands fa-threads"></i></a>
+            <a href="https://www.linkedin.com/company/thetechtition/"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-container">
+          <div class="section-heading">
+            <div class="heading-line"></div>
+            <h3>USEABLE LINKS</h3>
+          </div>
+          <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="../Pages/about.html">About</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#whyus">Why Us</a>
+            <a href="./projects.html">Projects</a>
+            <a href="./contact.html">Contact Us</a>
+          </div>
+        </div>
+
+        <div class="footer-contact-info">
+          <div class="section-heading">
+            <div class="heading-line"></div>
+            <h3>CONTACT INFO</h3>
+          </div>
+          <div class="footer-contact-details">
+            <div class="footer-contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <p>Karachi, Pakistan</p>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <p>+92 312 2238398</p>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-envelope"></i>
+              <p>info.techtition@gmail.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="newsletter">
+          <div class="section-heading">
+            <div class="heading-line"></div>
+            <h3>NEWSLETTER</h3>
+          </div>
+          <form class="newsletter-form" id="formnewsletter">
+            <input
+            type="hidden"
+            name="access_key"
+            value="04e2a5bc-7152-4f4b-b74f-5011acc9d52a"
+          />
+
+            <input
+              name="newsletter"
+              type="email"
+              placeholder="Your email address..."
+              required
+            />
+            <button type="submit" class="nlbtn">SUBSCRIBE</button>
+          </form>
+          <p>Sign up for our newsletter to get latest updates.</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="copyright">
+          © 2025 Techtition. All rights reserved.
+        </div>
+      </div>
+    </footer>
+    <script src="../app.js"></script>
+  </body>
+</html>
