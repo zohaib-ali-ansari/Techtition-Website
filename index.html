@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Techtition</title>
+    <link rel="icon" type="image/x-icon" href="./images/ourfavicon.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="sub-navbar">
+        <div class="logo-container">
+          <a href=""><img src="./images/logo.png" class="logo" alt="logo" /></a>
+        </div>
+        <div class="hamburger">
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+        </div>
+        <div class="menu-container">
+          <div class="menu">
+            <a href="">HOME</a>
+            <a href="./Pages/about.html">ABOUT</a>
+            <a href="#services">SERVICES</a>
+            <a href="#whyus">WHY US</a>
+            <a href="./Pages/projects.html">PROJECTS</a>
+          </div>
+        </div>
+        <div class="cnt-btn-container">
+          <a href="./Pages/contact.html" class="contact-btn">CONTACT US</a>
+        </div>
+      </div>
+    </nav>
+    <section class="offer-banner" style="display: flex">
+      <marquee direction="right">
+        We are offering 10% off on all services – Limited time offer!
+      </marquee>
+      <marquee direction="right" class="hiding-banner">
+        We are offering 10% off on all services – Limited time offer!
+      </marquee>
+    </section>
+    <section class="hero">
+      <!-- <img src="./images/hero-bg.png" alt="" /> -->
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>SOFTWARE AGENCY</h1>
+          <p>
+            We create user-friendly, high-quality, and efficient digital
+            solutions tailored to your needs. From web development to IT
+            services. Our team ensures innovation, quality, and efficiency in
+            every project.
+          </p>
+          <a href="./Pages/about.html" class="cta-button">Read More</a>
+        </div>
+        <img src="./images/slider-img.png" alt="slider-img" />
+      </div>
+    </section>
+
+    <div class="services-container" id="services">
+      <h2 class="services-title">Our <span>Services</span></h2>
+      <p class="services-description">
+        We provide creative and effective digital solutions to enhance your
+        brand and grow your business online.
+      </p>
+
+      <div class="services-grid">
+        <div class="service-box">
+          <img class="service-icon" src="./images/web-dev-icon.png" alt="web-dev-icon" />
+
+          <h3 class="service-title">WEB DEVELOPMENT</h3>
+          <p class="service-description">
+            We build fast and responsive websites that look great and work
+            smoothly on all devices.
+          </p>
+          <a href="./Pages/webdev.html" class="btn">Read More</a>
+        </div>
+
+        <div class="service-box">
+          <img class="service-icon" src="./images/uiux-icon.png" alt="uiux-icon" />
+          <h3 class="service-title">UI/UX DESIGN</h3>
+          <p class="service-description">
+            We design user-friendly and visually appealing interfaces to improve
+            the customer experience.
+          </p>
+          <a href="./Pages/uiux.html" class="btn">Read More</a>
+        </div>
+
+        <div class="service-box">
+          <img class="service-icon" src="./images/graphic-icon.png" alt="graphic-icon" />
+          <h3 class="service-title">GRAPHIC DESIGN</h3>
+          <p class="service-description">
+            We create eye-catching logos, branding, and marketing graphics to
+            make your business stand out.
+          </p>
+          <a href="./Pages/gd.html" class="btn">Read More</a>
+        </div>
+
+        <div class="service-box">
+          <img class="service-icon" src="./images/seo-icon.png" alt="seo-icon" />
+          <h3 class="service-title">SEO</h3>
+          <p class="service-description">
+            We help your website rank higher on search engines, drive organic
+            traffic, and increase visibility.
+          </p>
+          <a href="./Pages/seo.html" class="btn">Read More</a>
+        </div>
+
+        <div class="service-box">
+          <img class="service-icon" src="./images/wordpress-icon.png" alt="wordpress-icon" />
+          <h3 class="service-title">WORDPRESS</h3>
+          <p class="service-description">
+            We build and customize WordPress websites with great designs and
+            smooth functionality.
+          </p>
+          <a href="./Pages/wp.html" class="btn">Read More</a>
+        </div>
+
+        <div class="service-box">
+          <img class="service-icon" src="./images/shopify-icon.png" alt="shopify-icon" />
+
+          <h3 class="service-title">SHOPIFY</h3>
+          <p class="service-description">
+            We create professional and high-converting Shopify stores for your
+            online business.
+          </p>
+          <a href="./Pages/shopify.html" class="btn">Read More</a>
+        </div>
+      </div>
+
+      <!-- <button class="view-all-btn" onclick="toggleServices()">View All</button> -->
+    </div>
+
+    <h2 class="whyus-title" id="whyus">
+      Why Choose <span class="highlight">Us</span>
+    </h2>
+    <div class="whyus-container">
+      <div class="box">
+        <div class="icon">
+          <img src="./images/wu-1.png" alt="icon" />
+        </div>
+        <div class="title">Expert Team</div>
+        <p class="description">
+          Our skilled professionals bring creativity and technical expertise to
+          deliver top-quality solutions.
+        </p>
+      </div>
+      <div class="box">
+        <div class="icon">
+          <img src="./images/wu-2.png" alt="icon" />
+        </div>
+        <div class="title">Customer-Centric Approach</div>
+        <p class="description">
+          We focus on understanding your needs and providing solutions that
+          align with your business goals.
+        </p>
+      </div>
+      <div class="box">
+        <div class="icon">
+          <img src="./images/wu-3.png" alt="icon" />
+        </div>
+        <div class="title">Affordable Pricing</div>
+        <p class="description">
+          Get high-quality digital services at competitive prices without
+          compromising on excellence.
+        </p>
+      </div>
+      <div class="box">
+        <div class="icon">
+          <img src="./images/wu-4.png" alt="icon" />
+        </div>
+        <div class="title">On-Time Delivery</div>
+        <p class="description">
+          We value your time and ensure timely project completion with
+          consistent communication.
+        </p>
+      </div>
+    </div>
+
+    <section class="new_about">
+      <div class="about_container">
+        <!-- Left image -->
+        <div class="about_image_box">
+          <img src="./images/about-us-img.png" alt="about-us-img" />
+        </div>
+
+        <!-- Right content -->
+        <div class="about_content_box">
+          <h2 class="about_main_title">
+            About <span class="highlight_text">Us</span>
+          </h2>
+          <p class="about_subtitle">
+            Providing smart and simple digital solutions to help your business
+            succeed
+          </p>
+
+          <div class="about_text_content">
+            <h3>We Are Techtition</h3>
+            <p>
+              We are a team of creative and skilled professionals passionate
+              about helping businesses grow online. Our services include Web
+              Development, UI/UX Design, SEO, Graphic Designing, WordPress, and
+              Shopify. We focus on delivering high-quality, customized solutions
+              to meet your needs. Whether you want to build a new website,
+              improve your design, or boost your online presence, we are here to
+              help.
+            </p>
+            <p>
+              At Techtition, your success is our priority. Let's work together
+              to bring your ideas to life!
+            </p>
+            <a href="./Pages/about.html" class="btn">Read More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact_area">
+      <div class="contact_wrapper">
+        <!-- Left image -->
+        <div class="contact_image">
+          <img src="./images/contact-img.png" alt="contact-img" />
+        </div>
+
+        <!-- Right contact info -->
+        <div class="contact_info">
+          <h2 class="contact_heading">Contact Information</h2>
+
+          <!-- Location -->
+          <div class="info_item">
+            <div class="info_icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="info_content">
+              <h3>Our Location</h3>
+              <p>Karachi, Pakistan</p>
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="info_item">
+            <div class="info_icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="info_content">
+              <h3>Phone Number</h3>
+              <p>+92 312 2238398</p>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="info_item">
+            <div class="info_icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="info_content">
+              <h3>Email Address</h3>
+              <p>info.techtition@gmail.com</p>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="social_section">
+            <h3>Follow Us</h3>
+            <div class="cnt-social_links">
+              <a href="https://www.facebook.com/profile.php?id=61572506979003" class="cnt-social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <!-- <a href="https://x.com/thetechtition" class="cnt-social-icon">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a> -->
+              <a href="https://www.instagram.com/techtition/" class="cnt-social-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.threads.net/@techtition?xmt=AQGzmy6eU3FmKwsH6-l-KRQFJIwNFDOrI7LiU-vWxfVZhds" class="cnt-social-icon">
+                <i class="fa-brands fa-threads"></i>
+              </a>
+              <a href="https://www.linkedin.com/company/thetechtition/" class="cnt-social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              
+            </div>
+          </div>
+          <a href="./Pages/contact.html" class="cnt-us-now-btn"
+            >Want more Details? Contact Us Now</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="brand-section">
+          <a href=""><img src="./images/logo.png" class="logo" alt="logo" /></a>
+          <p class="brand-description">
+            A passionate team of digital artisans helps clients navigate the
+            digital landscape.
+          </p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61572506979003"><i class="fab fa-facebook-f"></i></a>
+            <!-- <a href="https://x.com/thetechtition"><i class="fa-brands fa-x-twitter"></i></a> -->
+            <a href="https://www.instagram.com/techtition/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.threads.net/@techtition?xmt=AQGzmy6eU3FmKwsH6-l-KRQFJIwNFDOrI7LiU-vWxfVZhds"><i class="fa-brands fa-threads"></i></a>
+            <a href="https://www.linkedin.com/company/thetechtition/"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-container">
+          <div class="section-heading">
+            <div class="heading-line"></div>
+            <h3>USEABLE LINKS</h3>
+          </div>
+          <div class="footer-links">
+            <a href="">Home</a>
+            <a href="./Pages/about.html">About</a>
+            <a href="./index.html#services">Services</a>
+            <a href="./index.html#whyus">Why Us</a>
+            <a href="./Pages/projects.html">Projects</a>
+            <a href="./Pages/contact.html">Contact Us</a>
+          </div>
+        </div>
+
+        <div class="footer-contact-info">
+          <div class="section-heading">
+            <div class="heading-line"></div>
+            <h3>CONTACT INFO</h3>
+          </div>
+          <div class="footer-contact-details">
+            <div class="footer-contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <p>Karachi, Pakistan</p>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <p>+92 312 2238398</p>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-envelope"></i>
+              <p>info.techtition@gmail.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="newsletter">
+          <div class="section-heading">
+            <div class="heading-line"></div>
+            <h3>NEWSLETTER</h3>
+          </div>
+          <form class="newsletter-form" id="formnewsletter">
+            <input
+              type="hidden"
+              name="access_key"
+              value="04e2a5bc-7152-4f4b-b74f-5011acc9d52a"
+            />
+
+            <input
+              name="newsletter"
+              type="email"
+              placeholder="Your email address..."
+              required
+            />
+            <button type="submit" class="nlbtn">SUBSCRIBE</button>
+          </form>
+          <p>Sign up for our newsletter to get latest updates.</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="copyright">
+          © 2025 Techtition. All rights reserved.
+        </div>
+      </div>
+    </footer>
+    <script src="./app.js"></script>
+  </body>
+</html>
